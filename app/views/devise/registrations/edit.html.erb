@@ -4,14 +4,30 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <p><%= f.label :email %></p>
+    <p><%= f.label :email, "メールアドレス" %></p>
     <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+  </div>
+
+  <div class="field">
+    <p><%= f.label :name, "名前" %></p>
+    <p><%= f.text_field :name %></p>
+  </div>
+
+  <div class="field">
+    <p><%= f.label :profile, "自己紹介" %></p>
+    <p><%= f.text_area :profile %></p>
+  </div>
+
+  <div class="field">
+    <p><%= f.label :avatar, "アイコン画像" %></p>
+    <p><%= f.file_field :avatar %></p>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+  <!-- 変更後パスワード -->
   <div class="field">
     <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></p>
     <p><%= f.password_field :password, autocomplete: "new-password" %></p>
@@ -20,11 +36,13 @@
     <% end %>
   </div>
 
+  <!-- パスワード確認用 -->
   <div class="field">
     <p><%= f.label :password_confirmation %></p>
     <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
   </div>
 
+  <!-- 現在のパスワード -->
   <div class="field">
     <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></p>
     <p><%= f.password_field :current_password, autocomplete: "current-password" %></p>
