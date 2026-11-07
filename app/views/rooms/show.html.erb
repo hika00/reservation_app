@@ -1,0 +1,37 @@
+<%= link to "←戻る", request.referer || rooms_path %>
+
+<%= link to "編集",  edit_room_path(@room) %>
+
+<% if @room.image.attached? %>
+  <%= image_tag @room.image, size: "300x200" %>
+<% else %>
+  <%= image_tag "room-default.png", size: "300x200" %>
+<% end %>
+
+<%= @room.name %>
+
+￥<%= @room.price %>~
+
+<%= @room.address %>
+
+<%= @room.description %>
+
+<div class="field">
+  <p>
+    <%= f.label :checkin_at, "チェックイン" %><br>
+    <%= f.date_field :checkin_at %>
+  </p>
+
+  <p>
+    <%= f.label :checkout_at, "チェックアウト" %><br>
+    <%= f.date_field :checkout_at %>
+  </p>
+
+  <p>
+    <%= f.label :guest_count, "人数" %><br>
+    <%= f.number_field :guest_count %>
+  </p>
+</div>
+
+<%= form.submit "予約する" %>
+<% end %>
