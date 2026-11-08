@@ -1,6 +1,13 @@
 class RoomsController < ApplicationController
 
   def index
+    if params[:keyword].present?
+      @rooms = Room.where("address LIKE ?", "%#{params[:keyword]}%")
+    else
+      @rooms = current_user.rooms
+    end
+  end
+
     @rooms = Room.order(:created_at)
   end
 

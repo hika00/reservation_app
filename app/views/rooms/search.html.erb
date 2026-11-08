@@ -1,0 +1,18 @@
+<%= render "search" %>
+
+<% @rooms.each do |room| %>
+  <div class="room-card">
+    <% if room.image.attached? %>
+      <%= image_tag room.image, size: "200x140" %>
+    <% else %>
+      <%= image_tag "room-default.png", size: "200x140" %>
+    <% end %>
+
+    <h2><%= room.name %></h2>
+    <p><%= room.address %></p>
+    <p><%= room.description %></p>
+    <h2>￥<%= room.price %>~</h2>
+
+    <%= link_to "詳細はこちら", room_path(room) %>
+  </div>
+<% end %>
