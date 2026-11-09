@@ -1,8 +1,8 @@
 <%= render "search" %>
 
-<%= link to "←戻る", request.referer || rooms_path %>
+<%= link_to "←戻る", request.referer || rooms_path %>
 
-<%= link to "編集",  edit_room_path(@room) %>
+<%= link_to "編集",  edit_room_path(@room) %>
 
 <% if @room.image.attached? %>
   <%= image_tag @room.image, size: "300x200" %>
@@ -18,6 +18,7 @@
 
 <%= @room.description %>
 
+<%= form_with model: [@room, @reservation], local: true do |f| %>
 <div class="field">
   <p>
     <%= f.label :checkin_at, "チェックイン" %><br>
@@ -35,5 +36,5 @@
   </p>
 </div>
 
-<%= form.submit "予約する" %>
+<%= f.submit "予約する" %>
 <% end %>

@@ -17,7 +17,10 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :reservations, only: [:new, :create]
   end
+
+  resources :reservations, only: [:index]
 
   # Defines the root path route ("/")
   # root "posts#index"
