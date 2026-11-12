@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/registrations'
+    sessions: 'users/sessions'
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,13 +14,21 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   resources :rooms do
+
     collection do
-      get 'search'
+      get "search"
     end
-    resources :reservations, only: [:new, :create]
+    
+    resources :reservations, only: [:new, :create] do
+      collection do
+        post :confirm
+      end
+    end
   end
 
   resources :reservations, only: [:index]
+
+
 
   # Defines the root path route ("/")
   # root "posts#index"

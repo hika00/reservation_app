@@ -1,4 +1,4 @@
-<%= form_with model: [@room, @reservation], local: true do |f| %>
+<%= form_with model: [@room, @reservation], url: confirm_room_reservations_path(@room), local: true do |f| %>
 <div class="field">
   <p>
     <%= f.label :checkin_at, "チェックイン" %><br>

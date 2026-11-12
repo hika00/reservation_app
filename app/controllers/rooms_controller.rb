@@ -8,11 +8,9 @@ class RoomsController < ApplicationController
     end
   end
 
-    @rooms = Room.order(:created_at)
-  end
-
   def show
     @room = Room.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
@@ -20,7 +18,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(room_params)
+    @room = current_user.rooms.new(room_params)
 
     if @room.save
       redirect_to @room, notice: "施設が作成されました。"
