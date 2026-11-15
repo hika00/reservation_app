@@ -1,0 +1,8 @@
+<h2>Potepan Sharede<br>
+まだ体験したことのない<br>
+旅をしよう</h2>
+
+<%= form_with url: search_rooms_path, method: :get, local: true do |f| %>
+  <%= f.text_field :area, placeholder: "エリア名を入力" %>
+  <%= f.submit "検索" %>
+<% end %>
