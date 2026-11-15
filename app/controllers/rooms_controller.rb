@@ -54,3 +54,4 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:name, :description, :price, :address, :image)
   end
 end
+

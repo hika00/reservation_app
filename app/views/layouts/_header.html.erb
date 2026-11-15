@@ -1,0 +1,29 @@
+<header>
+  <nav>
+    <h1>Potepan Share</h1>
+    
+      <% if user_signed_in? %>
+        <details>
+          <summary>
+            <%= current_user.avatar %>
+            <%= current_user.name %>
+          </summary>
+          <ul>
+            <li><link_to "施設の新規登録", new_room_path %></li>
+            <li><link_to "予約済み一覧", reservations_path %></li>
+            <li><link_to "登録済み一覧", rooms_path %></li>
+            <li><link_to "アカウント設定", 
+            <li><link_to "ログアウト", 
+          </ul>
+
+
+        </details>
+          <% else %>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+            <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <% end %>
+
+  
+  </nav>
+
+</header>

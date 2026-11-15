@@ -31,3 +31,4 @@ class Reservation < ApplicationRecord
       errors.add(:guest_count, "は1人以上で入力してください。")
     end
   end
+end
