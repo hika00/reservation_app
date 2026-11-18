@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :rooms, dependent: :destroy
   has_many :reservations, dependent: :destroy
   
-  has_one_attached :avatar       
+  has_one_attached :avatar
 end
