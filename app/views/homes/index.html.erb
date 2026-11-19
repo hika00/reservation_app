@@ -6,3 +6,37 @@
   <%= f.text_field :area, placeholder: "エリア名を入力" %>
   <%= f.submit "検索" %>
 <% end %>
+
+<h2>おすすめのエリア</h2>
+
+<%= link_to rooms_path(keyword: "東京"), class: "area-card" do %>
+  <%= image_tag "tokyo.jpg" %>
+  <div class="area-label">
+    <span class="area-name-ja">東京</span>
+    <spam class="area-name-en">Tokyo</span>
+  </div>
+<% end %>
+
+<%= link_to rooms_path(keyword: "大阪"), class: "area-card" do %>
+  <%= image_tag "osaka.jpg" %>
+  <div class="area-label">
+    <span class="area-name-ja">大阪</span>
+    <spam class="area-name-en">osaka</span>
+  </div>
+<% end %>
+
+<%= link_to rooms_path(keyword: "京都"), class: "area-card" do %>
+  <%= image_tag "kyoto.jpg" %>
+  <div class="area-label">
+    <span class="area-name-ja">京都</span>
+    <spam class="area-name-en">kyoto</span>
+  </div>
+<% end %>
+
+<%= link_to rooms_path(keyword: "札幌"), class: "area-card" do %>
+  <%= image_tag "sapporo.jpg" %>
+  <div class="area-label">
+    <span class="area-name-ja">札幌</span>
+    <spam class="area-name-en">sapporo</span>
+  </div>
+<% end %>

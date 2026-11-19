@@ -2,3 +2,25 @@ header {
   background-color: #1c1d3b;
   color: #fff;
 }
+
+.area-card {
+  position: relative;
+  display: inline-block;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.area-card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+}
+
+.area-label {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}

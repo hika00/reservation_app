@@ -48,6 +48,22 @@ class RoomsController < ApplicationController
     redirect_to rooms_path, notice: "施設が削除されました。"
   end
 
+  def search
+    @rooms = Room.all
+
+    if params[:area].present?
+      @rooms = @rooms.where("address LIKE ?", "%#{params[:area]}%")
+    end
+
+    if params[:keyword].present?
+      @rooms = @rooms.where(
+        "name LIKE ? OR description LIKE ?",
+        "%#{params[:keyword]}%",
+        "%#{params[:keyword]}%"
+      )
+    end
+  end
+
   private
 
   def room_params
