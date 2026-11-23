@@ -2,6 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :room
 
+  validates :checkin_at, :checkout_at, :guest_count, presence: true
   validate :checkin_at_after_or_equal_today
   validate :checkout_at_after_checkin_at
   validate :guest_count_greater_than_or_equal_to_one

@@ -9,7 +9,7 @@
 
 <h2>おすすめのエリア</h2>
 
-<%= link_to rooms_path(keyword: "東京"), class: "area-card" do %>
+<%= link_to search_rooms_path(area: "東京"), class: "area-card" do %>
   <%= image_tag "tokyo.jpg" %>
   <div class="area-label">
     <span class="area-name-ja">東京</span>
@@ -17,7 +17,7 @@
   </div>
 <% end %>
 
-<%= link_to rooms_path(keyword: "大阪"), class: "area-card" do %>
+<%= link_to search_rooms_path(area: "大阪"), class: "area-card" do %>
   <%= image_tag "osaka.jpg" %>
   <div class="area-label">
     <span class="area-name-ja">大阪</span>
@@ -25,7 +25,7 @@
   </div>
 <% end %>
 
-<%= link_to rooms_path(keyword: "京都"), class: "area-card" do %>
+<%= link_to search_rooms_path(area: "京都"), class: "area-card" do %>
   <%= image_tag "kyoto.jpg" %>
   <div class="area-label">
     <span class="area-name-ja">京都</span>
@@ -33,7 +33,7 @@
   </div>
 <% end %>
 
-<%= link_to rooms_path(keyword: "札幌"), class: "area-card" do %>
+<%= link_to search_rooms_path(area: "札幌"), class: "area-card" do %>
   <%= image_tag "sapporo.jpg" %>
   <div class="area-label">
     <span class="area-name-ja">札幌</span>

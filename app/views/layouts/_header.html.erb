@@ -1,8 +1,10 @@
 <header>
-  <nav>
-    <h1>Potepan Share</h1>
+  <nav class="header-nav">
+    <h1 class="header-logo">
+      <%= link_to "Potepan Share", root_path %>
+    </h1>
     
-    <ul>
+    <ul class="header-menu">
       <% if user_signed_in? %>
         <li>
           <details>
@@ -24,8 +26,8 @@
           </details>
         </li>
       <% else %>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li class="header-auth-item"><%= link_to "ログイン", new_user_session_path, class: "header-auth-link" %></li>
+        <li class="header-auth-item"><%= link_to "新規登録", new_user_registration_path, class: "header-auth-link header-auth-link--signup" %></li>
       <% end %>
     </ul>
   </nav>

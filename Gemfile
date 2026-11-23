@@ -57,3 +57,5 @@ group :test do
 end
 
 gem "json", "< 3"
+
+gem "rails-i18n"

@@ -1,5 +1,7 @@
 <%= render "search" %>
 
+<p><%= @rooms.count %>件が見つかりました。
+
 <% @rooms.each do |room| %>
   <div class="room-card">
     <% if room.image.attached? %>
