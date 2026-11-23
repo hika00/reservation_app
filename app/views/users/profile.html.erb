@@ -1,0 +1,20 @@
+<h2>設定</h2>
+
+<a href="/users/account">アカウント</a>
+<a href="/users/profile">プロフィール</a> 
+
+<h2>プロフィール</h2>
+
+<a href="<%= profile_edit_users_path %>">編集</a>
+
+<p>アイコン画像 
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+  <% else %>
+    <%= image_tag "avatar-default.png" %>
+  <% end %>
+</p>
+
+<p>名前 <%= @user.name %></p>
+<p>自己紹介 <%= @user.description %></p>
+

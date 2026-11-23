@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    attributes:
+      reservation:
+        checkin_at: チェックイン
+        checkout_at: チェックアウト
+        guest_count: 人数
+  devise:
+    registrations:
+      signed_up: "アカウント登録が完了しました。"
+      updated: "アカウント情報を更新しました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    failure:
+      user: 
+        invalid: "メールアドレスまたはパスワードが正しくありません。"
+    
